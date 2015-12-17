@@ -14,7 +14,8 @@ module.exports = function shallowEqual(objA, objB, compare, compareContext) {
     var keysA = fetchKeys(objA);
     var keysB = fetchKeys(objB);
 
-    if (keysA.length !== keysB.length) {
+    var len = keysA.length;
+    if (len !== keysB.length) {
         return false;
     }
 
@@ -22,12 +23,11 @@ module.exports = function shallowEqual(objA, objB, compare, compareContext) {
 
     // Test for A's keys different from B.
     var bHasOwnProperty = Object.prototype.hasOwnProperty.bind(objB);
-    var len = keysA.length;
     for (var i = 0; i < len; i++) {
-        if (!bHasOwnProperty(keysA[i])) {
+        var key = keysA[i];
+        if (!bHasOwnProperty(key)) {
             return false;
         }
-        var key = keysA[i];
         var valueA = objA[key];
         var valueB = objB[key];
 
