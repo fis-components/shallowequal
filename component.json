@@ -1,0 +1,12 @@
+{
+    "name": "shallowequal",
+    "description": "Like lodash isEqual but for shallow equal",
+    "repos": "https://github.com/dashed/shallowequal.git",
+    "main": "modules/index.js",
+    "tag": "master",
+    "reposType": "npm",
+    "dependencies": {
+        "lodash.keys": "^3.1.2"
+    },
+    "version": "0.2.1"
+}
